@@ -2828,7 +2828,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-24 18:55:14 +0000">02/24/2022</time>
+    <time datetime="2022-02-25 18:40:10 +0000">02/25/2022</time>
     
   
 
@@ -2860,10 +2860,10 @@
 <li>
 <p>Verify that the key management servers are still available, their status, and their authentication key information:</p>
 <div class="paragraph">
-<p><code>security key-manager show -status</code></p>
+<p><code>security key-manager external show-status</code></p>
 </div>
 <div class="paragraph">
-<p><code>security key-manager query</code></p>
+<p><code>security key-manager onboard shoecw-backup</code></p>
 </div>
 </li>
 <li>
@@ -2873,7 +2873,7 @@
 <li>
 <p>Add the key management server:</p>
 <div class="paragraph">
-<p><code>security key-manager -add &lt;key_management_server_ip_address&gt;</code></p>
+<p><code>security key-manager external add-servers -key-servers &lt;key_management_server_ip_address&gt;</code></p>
 </div>
 </li>
 <li>
@@ -2882,7 +2882,7 @@
 <li>
 <p>Verify the that the key management servers were added successfully:</p>
 <div class="paragraph">
-<p><code>security key-manager show</code></p>
+<p><code>security key-manager external show</code></p>
 </div>
 </li>
 </ol>
@@ -2898,7 +2898,7 @@
 <li>
 <p>Launch the key management server setup wizard on the new node:</p>
 <div class="paragraph">
-<p><code>security key-manager setup -node &lt;new_controller_name&gt;</code></p>
+<p><code>security key-manager external enable</code></p>
 </div>
 </li>
 <li>
@@ -2910,7 +2910,7 @@
 <li>
 <p>Restore authentication keys from all linked key management servers to the new node:</p>
 <div class="paragraph">
-<p><code>security key-manager restore -node &lt;new_controller_name&gt;</code></p>
+<p><code>security key-manager external restore -node &lt;new_controller_name&gt;</code></p>
 </div>
 </li>
 </ol>

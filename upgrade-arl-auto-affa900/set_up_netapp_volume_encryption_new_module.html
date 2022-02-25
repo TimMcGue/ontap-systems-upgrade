@@ -2828,7 +2828,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-24 18:55:14 +0000">02/24/2022</time>
+    <time datetime="2022-02-25 18:40:10 +0000">02/25/2022</time>
     
   
 
@@ -2870,7 +2870,7 @@
 <li>
 <p>Add the key management server:</p>
 <div class="paragraph">
-<p><code>security key-manager -add &lt;key_management_server_ip_address&gt;</code></p>
+<p><code>security key-manager external add-servers -key-servers &lt;key_management_server_ip_address&gt;</code></p>
 </div>
 </li>
 <li>
@@ -2879,7 +2879,7 @@
 <li>
 <p>Verify the that the key management servers were added successfully:</p>
 <div class="paragraph">
-<p><code>security key-manager show</code></p>
+<p><code>security key-manager external show</code></p>
 </div>
 </li>
 </ol>
@@ -2895,7 +2895,7 @@
 <li>
 <p>Launch the key management server setup wizard on the new node:</p>
 <div class="paragraph">
-<p><code>security key-manager setup -node &lt;new_controller_name&gt;</code></p>
+<p><code>security key-manager external enable</code></p>
 </div>
 </li>
 <li>
@@ -2913,14 +2913,15 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">For …</th>
+<th class="tableblock halign-left valign-top">For&#8230;&#8203;</th>
 <th class="tableblock halign-left valign-top">Use this command&#8230;&#8203;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">External Key Manager (EKM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External key manager</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>security key-manager external restore</code><br>
+<br>
 This command needs the OKM passphrase</p></td>
 </tr>
 <tr>
@@ -2931,6 +2932,10 @@ This command needs the OKM passphrase</p></td>
 </table>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<div class="title">After you finish</div>
+<p>Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online using the <code>volume online</code> command.</p>
 </div>
 <div class="paragraph">
 <div class="title">After you finish</div>

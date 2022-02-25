@@ -2828,7 +2828,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-24 18:55:14 +0000">02/24/2022</time>
+    <time datetime="2022-02-25 18:40:10 +0000">02/25/2022</time>
     
   
 
@@ -2856,25 +2856,25 @@
 <li>
 <p>Configure Storage Encryption on all nodes by using the following command on each node:</p>
 <div class="paragraph">
-<p><code>security key-manager setup</code></p>
+<p><code>security key-manager external enable</code></p>
 </div>
 </li>
 <li>
 <p>Add the IP address for each key management server:</p>
 <div class="paragraph">
-<p><code>security key-manager add</code></p>
+<p><code>security key-manager external add-servers -key-servers &lt;key_management_server_ip_address&gt;</code></p>
 </div>
 </li>
 <li>
 <p>Verify that the same key management servers are configured and available on all nodes in the cluster:</p>
 <div class="paragraph">
-<p><code>security key-manager show -status</code></p>
+<p><code>security key-manager external show-status</code></p>
 </div>
 </li>
 <li>
 <p>Create a new cluster-wide authentication key:</p>
 <div class="paragraph">
-<p><code>security key-manager create-key</code></p>
+<p><code>security key-manager key create</code></p>
 </div>
 </li>
 <li>
@@ -2902,25 +2902,25 @@
 <li>
 <p>Add a new controller:</p>
 <div class="paragraph">
-<p><code>security key-manager setup -node &lt;new_controller_name&gt;</code></p>
+<p><code>security key-manager external enable</code></p>
 </div>
 </li>
 <li>
 <p>Add the key manager:</p>
 <div class="paragraph">
-<p><code>security key-manager -add &lt;key_management_server_ip_address&gt;</code></p>
+<p><code>security key-manager external add-servers -key-servers &lt;key_management_server_ip_address&gt;</code></p>
 </div>
 </li>
 <li>
 <p>Verify that the key management servers are configured and available to all nodes in the cluster:</p>
 <div class="paragraph">
-<p><code>security key-manager show -status</code></p>
+<p><code>security key-manager external show-status</code></p>
 </div>
 </li>
 <li>
 <p>Restore the authentication keys from all linked key management servers to the new node:</p>
 <div class="paragraph">
-<p><code>security key-manager restore -node &lt;new_controller_name&gt;</code></p>
+<p><code>security key-manager external restore -node &lt;new_controller_name&gt;</code></p>
 </div>
 </li>
 <li>
@@ -2954,7 +2954,7 @@
 <li>
 <p>Create a backup for recovery purposes. Run the following command and save the output:</p>
 <div class="paragraph">
-<p><code>key-manager onboard show-backup</code></p>
+<p><code>security key-manager onboard show-backup</code></p>
 </div>
 </li>
 </ol>

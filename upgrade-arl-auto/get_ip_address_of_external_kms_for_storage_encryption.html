@@ -2828,11 +2828,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-24 18:55:14 +0000">02/24/2022</time>
+    <time datetime="2022-02-25 18:40:10 +0000">02/25/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-pcarriga">
+    <img  class="avatar avatar-small"
+          alt="netapp-pcarriga"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/77334475?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -2896,8 +2904,10 @@
 <div class="paragraph">
 <p>With ONTAP 9.5 to 9.7, you can use Key Management Interoperability Protocol (KMIP) servers to manage authentication keys.</p>
 </div>
+<div class="paragraph">
+<p>Steps</p>
+</div>
 <div class="olist arabic">
-<div class="title">Steps</div>
 <ol class="arabic">
 <li>
 <p>Add a new controller:</p>
@@ -2955,6 +2965,28 @@
 <p>Create a backup for recovery purposes. Run the following command and save the output:</p>
 <div class="paragraph">
 <p><code>key-manager onboard show-backup</code></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manage-storage-encryption-using-onboard-key-manager-2">Manage storage encryption using Onboard Key Manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the OKM to manage encryption keys. If you plan to use OKM, you must record the passphrase and backup material before beginning the upgrade.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Save the passphrase to a secure location.</p>
+</li>
+<li>
+<p>Create a backup for recovery purposes. Run the following command and save the output:</p>
+<div class="paragraph">
+<p><code>security key-manager onboard show-backup</code></p>
 </div>
 </li>
 </ol>
