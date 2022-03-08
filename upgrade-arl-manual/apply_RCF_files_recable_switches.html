@@ -16,20 +16,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/>
-  
-  <meta name="description" content="Apply the appropriate RCF files to reconfigure switches to accommodate the new nodes.">
-  <meta name="keywords" content=" rcf files, reference configuration, switches, nodes, recable, fc">
-  
-  
-
-  <!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Apply the appropriate RCF files to reconfigure switches to accommodate the new nodes.">
+  <meta name="keywords" content=" rcf files, reference configuration, switches, nodes, recable, fc"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
 
-  <!-- RSS Feed -->
-  
-
-  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
@@ -60,26 +51,10 @@
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
   <link rel="stylesheet" href='/us-en/ontap-systems-upgrade/css/product-family.css' type="text/css">
-  
-
-  
-  <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-feature.css' type='text/css'>
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-  
-    <script src='/us-en/ontap-systems-upgrade/js/na-search.js'></script>
-  
-
-  
-  <script src='/us-en/ontap-systems-upgrade/js/na-pagenav.js'></script>
-  
-
-  <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism.css' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap-systems-upgrade/js/na-search.js'></script><script src='/us-en/ontap-systems-upgrade/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
 
 
@@ -97,9 +72,7 @@
   <script src='/us-en/ontap-systems-upgrade/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/ontap-systems-upgrade/js/toc.js'></script>
-  <script src='/us-en/ontap-systems-upgrade/js/customscripts.js'></script>
-
-  <script>
+  <script src='/us-en/ontap-systems-upgrade/js/customscripts.js'></script><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -2794,8 +2767,7 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container -->
-    <article class="page-content">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
@@ -2828,7 +2800,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 18:40:10 +0000">02/25/2022</time>
+    <time datetime="2022-03-08 14:18:27 +0000">03/08/2022</time>
     
   
 
@@ -2848,7 +2820,7 @@
 
 
 <div class="paragraph lead">
-<p>You must apply the appropriate reference configuration (RCF) files to reconfigure your switches to accommodate the new nodes. After you apply the RCF files, you can recable the switches.</p>
+<p>You must apply the appropriate reference configuration files (RCFs) to reconfigure your switches to accommodate the new nodes. After you apply the RCFs, you can recable the switches.</p>
 </div>
 <div class="paragraph">
 <div class="title">Before you begin</div>
@@ -2858,19 +2830,23 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Locate the RCF files for your configuration.</p>
+<p>Go to the <a href="https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab" target="_blank" rel="noopener">MetroCluster RCF downloads</a> page and select the RCFs for your switch configuration.</p>
 <div class="paragraph">
-<p>You must use the RCF files that match your switch model.</p>
-</div>
-<div class="paragraph">
-<p><a href="http://mysupport.netapp.com/NOW/download/software/metrocluster_brocade/sanswitch/index.shtml">NetApp Downloads: MetroCluster Configuration Files for Brocade Switches</a></p>
-</div>
-<div class="paragraph">
-<p><a href="http://mysupport.netapp.com/NOW/download/software/metrocluster_cisco/sanswitch/index.shtml">NetApp Downloads: MetroCluster Configuration Files for Cisco Switches</a></p>
+<p>You must use the RCFs that match your switch models.</p>
 </div>
 </li>
 <li>
-<p>Apply the RCF files, following the directions on the <strong>Download</strong> page and adjusting the ISL settings as needed.</p>
+<p>Install the FC switch RCFs by selecting the procedure that matches your switch models and following the installation instructions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_install_the_brocade_fc_switch_rcf_file.html" target="_blank" rel="noopener">Install a Brocade FC switch RCF</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_download_and_install_the_cisco_fc_switch_rcf_files.html" target="_blank" rel="noopener">Install a Cisco FC switch RCF</a></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Verify that the switch configuration is saved.</p>
@@ -2929,8 +2905,7 @@
     </div>
   </div>
   
-  <div style="clear: both"></div><!-- Main needs to have height -->
-</div>
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
 
@@ -3032,9 +3007,7 @@
 </div>
 </footer>
 
-      </div>
-
-      <!-- Elasticsearch JS -->
+      </div><!-- Elasticsearch JS -->
       <script type="text/javascript" src='/us-en/ontap-systems-upgrade/js/bundle.js'></script>
 
       <!-- Syntax Highlighting -->
@@ -3049,7 +3022,4 @@
     </script>
     <script src='/us-en/ontap-systems-upgrade/js/www-ntap.js'></script>
     <script src='/us-en/ontap-systems-upgrade/js/tabbed-blocks.js'></script>
-  </body>
-
-  
-</html>
+  </body></html>
