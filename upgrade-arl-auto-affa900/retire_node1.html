@@ -9,14 +9,14 @@
   <meta property="og:title" content="Retire node1" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node1.html" />
-	<meta property="og:description" content="Retire node1 by resuming the automated operation to disable the HA pair with node2 and shutting down node1 correctly." />
+	<meta property="og:description" content="Disable the HA pair with node2 and shut node1 down during an AFF A700 to AFF A900 upgrade." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap-systems-upgrade/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Retire node1 by resuming the automated operation to disable the HA pair with node2 and shutting down node1 correctly.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Disable the HA pair with node2 and shut node1 down during an AFF A700 to AFF A900 upgrade.">
   <meta name="keywords" content=" retiring, node, retire"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
 
@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/ontap-systems-upgrade/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap-systems-upgrade/js/na-search.js'></script><script src='/us-en/ontap-systems-upgrade/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/ontap-systems-upgrade/js/version-dropdown.js'></script>
-  <script src='/us-en/ontap-systems-upgrade/js/product-family.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Retire node1](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node1.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-affa900/retire_node1.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -602,15 +620,13 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_running_ONTAP_9_10_1_RC2_or_later.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_running_ONTAP_9_10_1_or_later.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 RC2 or later
+            Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 or later
           </a>
           
-
-
 
 
 
@@ -696,11 +712,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_controller_module_and_NVS.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 3. Boot node1 with the AFF A900 controller module and NVS
+            Stage 3. Boot node1 with the AFF A900 controller module and NVRAM module
           </a>
           
 
@@ -752,11 +768,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_NVS_and_controller_module_on_node2.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_NVRAM_module_and_controller_module_on_node2.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 5. Install the AFF A900 NVS and controller module on node2
+            Stage 5. Install the AFF A900 NVRAM module and controller module on node2
           </a>
           
 
@@ -778,11 +794,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_controller_module_and_NVS.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 6. Boot node2 with the AFF A900 controller module and NVS
+            Stage 6. Boot node2 with the AFF A900 controller module and NVRAM module
           </a>
           
 
@@ -890,8 +906,6 @@
             Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later
           </a>
           
-
-
 
 
 
@@ -1169,8 +1183,6 @@
 
 
 
-
-
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -1430,8 +1442,6 @@
             Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.5 to 9.7
           </a>
           
-
-
 
 
 
@@ -1750,8 +1760,6 @@
     
 
   
-
-
 
 
 
@@ -2150,7 +2158,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl/index.html">
         Overview
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 RC2 or later</div>
+        <div class="na-navbar-padding"> Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 or later</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         Overview
@@ -2164,8 +2172,6 @@
         Guidelines for upgrading from an AFF A700 to an AFF A900 with ARL
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2187,10 +2193,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         Netboot node1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 3. Boot node1 with the AFF A900 controller module and NVS</div>
+        <div class="na-navbar-padding"> Stage 3. Boot node1 with the AFF A900 controller module and NVRAM module</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        Boot node1 with the AFF A900 controller module and NVS
+        Boot node1 with the AFF A900 controller module and NVRAM module
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         Verify the node1 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2205,17 +2211,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         Retire node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 5. Install the AFF A900 NVS and controller module on node2</div>
+        <div class="na-navbar-padding"> Stage 5. Install the AFF A900 NVRAM module and controller module on node2</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        Install AFF A900 NVS and controller module on node2
+        Install AFF A900 NVRAM module and controller module on node2
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         Netboot node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 6. Boot node2 with the AFF A900 controller module and NVS</div>
+        <div class="na-navbar-padding"> Stage 6. Boot node2 with the AFF A900 controller module and NVRAM module</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        Boot node2 with the AFF A900 controller module and NVS
+        Boot node2 with the AFF A900 controller module and NVRAM module
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         Verify the node2 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -2271,8 +2277,6 @@
         Verify switchover, healing, and switchback
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2379,8 +2383,6 @@
         Required tools and documentation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
          Worksheet:  Information to collect before and during the controller upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2507,8 +2509,6 @@
         Verify switchover, healing, and switchback
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2640,9 +2640,7 @@
         Persistently enable the switches
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/verify_swtichover_healing_switchback.html">
         Verify switchover, healing, and switchback
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/upgrade_node_pair.html">
-        Upgrade the node pair
-      </a></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/stage_1_index.html">
@@ -2773,19 +2771,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/ontap-systems-upgrade/">AFF&nbsp;and&nbsp;FAS&nbsp;Controller&nbsp;Upgrade</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Retire node1
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2800,7 +2795,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 14:18:27 +0000">03/08/2022</time>
+    <time datetime="2022-03-22 18:09:21 +0000">03/22/2022</time>
     
   
 
@@ -2813,16 +2808,23 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" href="https://github.com/netapp-martyh">
+    <img  class="avatar avatar-small"
+          alt="netapp-martyh"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/66496079?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
-
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>To retire node1, resume the automated operation to disable the HA pair with node2 and shut down node1 correctly. You must later remove the AFF A700 controller module and NVS from the node1 chassis and then install the AFF A900 NVS and controller module on node1.</p>
+<p>To retire node1, resume the automated operation to disable the HA pair with node2 and shut down node1 correctly. You must later remove the AFF A700 controller module and the NVRAM module from the node1 chassis and then install the AFF A900 NVRAM module and controller module on node1.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -2847,14 +2849,14 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="remove-the-aff-a700-controller-module-and-nvs">Remove the AFF A700 controller module and NVS</h2>
+<h2 id="remove-the-aff-a700-controller-module-and-nvram-module">Remove the AFF A700 controller module and NVRAM module</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>At this stage, node1 is down and all data is served by node2. Because node1 and node2 are in the same chassis and powered by the same set of power supplies, do NOT power off the chassis. You must take care to remove only the node1 controller module and the node1 NVS. Typically, node1 is controller A located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.</p>
+<p>At this stage, node1 is down and all data is served by node2. Because node1 and node2 are in the same chassis and powered by the same set of power supplies, do NOT power off the chassis. You must take care to remove only the node1 controller module and the node1 NVRAM module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.</p>
 </div>
 <div class="paragraph">
 <div class="title">Before you begin</div>
-<p>If you are not already grounded, properly ground yourself.</p>
+<p>If you are not already grounded, correctly ground yourself.</p>
 </div>
 <div class="sect2">
 <h3 id="remove-the-aff-a700-controller-module">Remove the AFF A700 controller module</h3>
@@ -2928,9 +2930,9 @@ When you are working on node1, you only remove the console and e0M cables from n
 </div>
 </div>
 <div class="sect2">
-<h3 id="remove-the-aff-a700-nvs-module">Remove the AFF A700 NVS module</h3>
+<h3 id="remove-the-aff-a700-nvram-module">Remove the AFF A700 NVRAM module</h3>
 <div class="paragraph">
-<p>Use the following procedure to remove the AFF A700 NVS module.</p>
+<p>Use the following procedure to remove the AFF A700 NVRAM module.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2939,7 +2941,7 @@ When you are working on node1, you only remove the console and e0M cables from n
 <img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="Note">
 </td>
 <td class="content">
-The AFF A700 NVS module is in slot 6 and is double the height compared to the other modules in the system.
+The AFF A700 NVRAM module is in slot 6 and is double the height of the other modules in the system.
 </td>
 </tr>
 </table>
@@ -2948,7 +2950,7 @@ The AFF A700 NVS module is in slot 6 and is double the height compared to the ot
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Unlock and remove the NVS from slot 6 of node1.</p>
+<p>Unlock and remove the NVRAM module from slot 6 of node1.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2960,14 +2962,14 @@ The AFF A700 NVS module is in slot 6 and is double the height compared to the ot
 <li>
 <p>Rotate the cam latch down until it is in a horizontal position.</p>
 <div class="paragraph">
-<p>The NVS disengages from the chassis and moves a few inches.</p>
+<p>The NVRAM module disengages from the chassis and moves a few inches.</p>
 </div>
 </li>
 <li>
-<p>Remove the NVS from the chassis by pulling on the pull tabs on the sides of the module face.</p>
+<p>Remove the NVRAM module from the chassis by pulling on the pull tabs on the sides of the module face.</p>
 <div class="imageblock">
 <div class="content">
-<img src="./media/drw_a900_move-remove_NVRAM_module.png" alt="Remove NVS">
+<img src="./media/drw_a900_move-remove_NVRAM_module.png" alt="Remove the NVRAM module">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2999,7 +3001,7 @@ The AFF A700 NVS module is in slot 6 and is double the height compared to the ot
 </div>
 </li>
 <li>
-<p>If you are using any add-on modules as coredump devices on the AFF A700 NVS, do NOT transfer them to the AFF A900 NVS.</p>
+<p>If you are using any add-on modules as coredump devices on the AFF A700 NVRAM module, do NOT transfer them to the AFF A900 NVRAM module.</p>
 </li>
 </ol>
 </div>
@@ -3007,31 +3009,31 @@ The AFF A700 NVS module is in slot 6 and is double the height compared to the ot
 </div>
 </div>
 <div class="sect1">
-<h2 id="install-the-aff-a900-nvs-and-controller-module-on-node1">Install the AFF A900 NVS and controller module on node1</h2>
+<h2 id="install-the-aff-a900-nvram-module-and-controller-module-on-node1">Install the AFF A900 NVRAM module and controller module on node1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You must install the AFF A900 NVS and controller module that you received for the upgrade on node1. Do NOT move the coredump devices from the AFF A700 NVS module to the AFF A900 NVS module.</p>
+<p>You must install the AFF A900 NVRAM module and controller module that you received for the upgrade on node1. Do NOT move the coredump devices from the AFF A700 NVRAM module to the AFF A900 NVRAM module.</p>
 </div>
 <div class="paragraph">
 <div class="title">Before you begin</div>
-<p>If you are not already grounded, properly ground yourself.</p>
+<p>If you are not already grounded, correctly ground yourself.</p>
 </div>
 <div class="sect2">
-<h3 id="install-the-aff-a900-nvs">Install the AFF A900 NVS</h3>
+<h3 id="install-the-aff-a900-nvram-module">Install the AFF A900 NVRAM module</h3>
 <div class="paragraph">
-<p>Use the following procedure to install the AFF A900 NVS in slot 6 of node1.</p>
+<p>Use the following procedure to install the AFF A900 NVRAM module in slot 6 of node1.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Align the NVS with the edges of the chassis opening in slot 6.</p>
+<p>Align the NVRAM module with the edges of the chassis opening in slot 6.</p>
 </li>
 <li>
-<p>Gently slide the NVS into the slot until the lettered and numbered I/O cam latch begins to engage with the I/O cam pin, and then push the I/O cam latch all the way up to lock the NVS in place.</p>
+<p>Gently slide the NVRAM module into the slot until the lettered and numbered I/O cam latch begins to engage with the I/O cam pin, and then push the I/O cam latch all the way up to lock the NVRAM module in place.</p>
 <div class="imageblock">
 <div class="content">
-<img src="./media/drw_a900_move-remove_NVRAM_module.png" alt="Install NVS">
+<img src="./media/drw_a900_move-remove_NVRAM_module.png" alt="Install the NVRAM module">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3071,7 +3073,7 @@ The AFF A700 NVS module is in slot 6 and is double the height compared to the ot
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Align the end of the controller module with the opening A in the chassis, and then gently push the controller module halfway into the system.</p>
+<p>Align the end of the controller module with opening A in the chassis, and then gently push the controller module halfway into the system.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3079,7 +3081,7 @@ The AFF A700 NVS module is in slot 6 and is double the height compared to the ot
 <img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Do not completely insert the controller module in the chassis until instructed to do so.
+Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
 </td>
 </tr>
 </table>
@@ -3094,7 +3096,7 @@ Do not completely insert the controller module in the chassis until instructed t
 <img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as it is fully seated. To interrupt the node1 boot, before completely inserting controller module into the slot, it is recommended to connect the serial console and management cables to the node1 controller module.
+Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
 </td>
 </tr>
 </table>
@@ -3112,14 +3114,14 @@ Because the chassis is already powered ON, node1 starts BIOS initialization foll
 <img src="/us-en/ontap-systems-upgrade/images/warning.svg" alt="Warning">
 </td>
 <td class="content">
-Do not use excessive force when sliding the controller module into the chassis to avoid damaging the connectors.
+To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
 </td>
 </tr>
 </table>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./media/drw_9500_remove_PCM.png" alt="Install controller module">
+<img src="./media/drw_9500_remove_PCM.png" alt="Install the controller module">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3151,7 +3153,7 @@ Do not use excessive force when sliding the controller module into the chassis t
 <p>Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.</p>
 </li>
 <li>
-<p>After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt to press <strong>Ctrl-C</strong> to go into the boot menu. After the node stops at the boot menu, use option <code>8</code> to reboot the node and interrupt the AUTOBOOT during reboot.</p>
+<p>After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press <strong>Ctrl-C</strong> to go into the boot menu. After the node stops at the boot menu, use option <code>8</code> to reboot the node and interrupt the AUTOBOOT during reboot.</p>
 </li>
 <li>
 <p>At the LOADER&gt; prompt of node1, set the default environment variables:</p>
@@ -3175,25 +3177,6 @@ Do not use excessive force when sliding the controller module into the chassis t
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Retire node1](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node1.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-affa900/retire_node1.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>

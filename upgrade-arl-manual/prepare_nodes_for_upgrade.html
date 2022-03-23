@@ -9,14 +9,14 @@
   <meta property="og:title" content="Prepare the nodes for upgrade" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/prepare_nodes_for_upgrade.html" />
-	<meta property="og:description" content="The nodes must be prepared before you can upgrade." />
+	<meta property="og:description" content="Prepare the nodes, collect information, and confirm that all cluster nodes are in quorum during a manual ARL upgrade on controllers running ONTAP 9.7 or earl..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap-systems-upgrade/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The nodes must be prepared before you can upgrade.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Prepare the nodes, collect information, and confirm that all cluster nodes are in quorum during a manual ARL upgrade on controllers running ONTAP 9.7 or earl...">
   <meta name="keywords" content=" prepare, nodes, upgrade, missing disks, HA pair, san"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
 
@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/ontap-systems-upgrade/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap-systems-upgrade/js/na-search.js'></script><script src='/us-en/ontap-systems-upgrade/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/ontap-systems-upgrade/js/version-dropdown.js'></script>
-  <script src='/us-en/ontap-systems-upgrade/js/product-family.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Prepare the nodes for upgrade](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/prepare_nodes_for_upgrade.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-manual/prepare_nodes_for_upgrade.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -602,15 +620,13 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_running_ONTAP_9_10_1_RC2_or_later.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_running_ONTAP_9_10_1_or_later.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 RC2 or later
+            Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 or later
           </a>
           
-
-
 
 
 
@@ -687,11 +703,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_controller_module_and_NVS.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 3. Boot node1 with the AFF A900 controller module and NVS
+            Stage 3. Boot node1 with the AFF A900 controller module and NVRAM module
           </a>
           
 
@@ -743,11 +759,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_NVS_and_controller_module_on_node2.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_NVRAM_module_and_controller_module_on_node2.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 5. Install the AFF A900 NVS and controller module on node2
+            Stage 5. Install the AFF A900 NVRAM module and controller module on node2
           </a>
           
 
@@ -769,11 +785,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_controller_module_and_NVS.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 6. Boot node2 with the AFF A900 controller module and NVS
+            Stage 6. Boot node2 with the AFF A900 controller module and NVRAM module
           </a>
           
 
@@ -881,8 +897,6 @@
             Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later
           </a>
           
-
-
 
 
 
@@ -1160,8 +1174,6 @@
 
 
 
-
-
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -1421,8 +1433,6 @@
             Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.5 to 9.7
           </a>
           
-
-
 
 
 
@@ -1741,8 +1751,6 @@
     
 
   
-
-
 
 
 
@@ -2150,7 +2158,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl/index.html">
         Overview
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 RC2 or later</div>
+        <div class="na-navbar-padding"> Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 or later</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         Overview
@@ -2164,8 +2172,6 @@
         Guidelines for upgrading from an AFF A700 to an AFF A900 with ARL
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2187,10 +2193,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         Netboot node1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 3. Boot node1 with the AFF A900 controller module and NVS</div>
+        <div class="na-navbar-padding"> Stage 3. Boot node1 with the AFF A900 controller module and NVRAM module</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        Boot node1 with the AFF A900 controller module and NVS
+        Boot node1 with the AFF A900 controller module and NVRAM module
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         Verify the node1 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2205,17 +2211,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         Retire node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 5. Install the AFF A900 NVS and controller module on node2</div>
+        <div class="na-navbar-padding"> Stage 5. Install the AFF A900 NVRAM module and controller module on node2</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        Install AFF A900 NVS and controller module on node2
+        Install AFF A900 NVRAM module and controller module on node2
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         Netboot node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 6. Boot node2 with the AFF A900 controller module and NVS</div>
+        <div class="na-navbar-padding"> Stage 6. Boot node2 with the AFF A900 controller module and NVRAM module</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        Boot node2 with the AFF A900 controller module and NVS
+        Boot node2 with the AFF A900 controller module and NVRAM module
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         Verify the node2 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -2271,8 +2277,6 @@
         Verify switchover, healing, and switchback
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2379,8 +2383,6 @@
         Required tools and documentation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
          Worksheet:  Information to collect before and during the controller upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2507,8 +2509,6 @@
         Verify switchover, healing, and switchback
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto/upgrade_node_pair.html">
-        Upgrade the node pair
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2640,9 +2640,7 @@
         Persistently enable the switches
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/verify_swtichover_healing_switchback.html">
         Verify switchover, healing, and switchback
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/upgrade_node_pair.html">
-        Upgrade the node pair
-      </a></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/stage_1_index.html">
@@ -2773,19 +2771,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/ontap-systems-upgrade/">AFF&nbsp;and&nbsp;FAS&nbsp;Controller&nbsp;Upgrade</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Prepare the nodes for upgrade
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2800,7 +2795,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 14:18:27 +0000">03/08/2022</time>
+    <time datetime="2022-03-16 18:20:17 +0000">03/16/2022</time>
     
   
 
@@ -2818,15 +2813,14 @@
 
 </p>
 
-
 <div class="paragraph lead">
-<p>Before you can replace the original nodes, you must ensure that they are in an HA pair, have no missing or failed disks, can access each other&#8217;s storage, and do not own data LIFs assigned to the other nodes in the cluster. You also need to collect information about the original nodes and, if the cluster is in a SAN environment, ensure that all the nodes in the cluster are in quorum.</p>
+<p>Before you can replace the original nodes, you must confirm that they are in an HA pair, have no missing or failed disks, can access each other&#8217;s storage, and do not own data LIFs assigned to the other nodes in the cluster. You also must collect information about the original nodes and, if the cluster is in a SAN environment, confirm that all the nodes in the cluster are in quorum.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Ensure that each of the original nodes has enough resources to adequately support the workload of both nodes during takeover mode.</p>
+<p>Confirm that each of the original nodes has enough resources to adequately support the workload of both nodes during takeover mode.</p>
 <div class="paragraph">
 <p>Refer to <a href="other_references.html">References</a> to link to <em>High Availability management</em> and follow the <em>Best practices for HA pairs</em> section. Neither of the original nodes should be running at more than 50 percent utilization; if a node is running at less than 50 percent utilization, it can handle the loads for both nodes during the controller upgrade.</p>
 </div>
@@ -2865,7 +2859,7 @@
 <li>
 <p>Verify that NVMEM or NVRAM batteries of node3 and node4 are charged, and charge them if they are not.</p>
 <div class="paragraph">
-<p>You need to physically check node3 and node4 to see if the NVMEM or NVRAM batteries are charged. For information about the LEDs for the model of node3 and node4, refer to <a href="other_references.html">References</a> to link to the <em>Hardware Universe</em>.</p>
+<p>You must physically check node3 and node4 to see if the NVMEM or NVRAM batteries are charged. For information about the LEDs for the model of node3 and node4, refer to <a href="other_references.html">References</a> to link to the <em>Hardware Universe</em>.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2883,7 +2877,7 @@
 <li>
 <p>Check the version of ONTAP on node3 and node4.</p>
 <div class="paragraph">
-<p>The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you need to netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to <a href="other_references.html">References</a> to link to <em>Upgrade ONTAP</em>.</p>
+<p>The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you must netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to <a href="other_references.html">References</a> to link to <em>Upgrade ONTAP</em>.</p>
 </div>
 <div class="paragraph">
 <p>Information about the version of ONTAP on node3 and node4 should be included in the shipping boxes. The ONTAP version is displayed when the node boots up or you can boot the node to maintenance mode and run the command:</p>
@@ -2981,7 +2975,7 @@ RPC status:
 </div>
 </li>
 <li>
-<p>Ensure that node1 and node2 are in an HA pair and verify that the nodes are connected to each other, and that takeover is possible:</p>
+<p>Confirm that node1 and node2 are in an HA pair and verify that the nodes are connected to each other, and that takeover is possible:</p>
 <div class="paragraph">
 <p><code>storage failover show</code></p>
 </div>
@@ -3017,7 +3011,7 @@ node2          node1          true     Connected to node1</pre>
 </div>
 </li>
 <li>
-<p><a id="man_prepare_nodes_step9"></a>Ensure that neither node1 nor node2 owns the aggregates for which it is the current owner (but not the home owner):</p>
+<p><a id="man_prepare_nodes_step9"></a>Confirm that neither node1 nor node2 owns the aggregates for which it is the current owner (but not the home owner):</p>
 <div class="paragraph">
 <p><code>storage aggregate show -node &lt;node_name&gt; -is-home false -fields owner-name,homename,state</code></p>
 </div>
@@ -3112,7 +3106,7 @@ aggr4         node1        node1        online
 </div>
 </li>
 <li>
-<p><a id="man_prepare_nodes_step12"></a> Ensure that node1 and node2 can access each other&#8217;s storage and verify that no disks are missing:</p>
+<p><a id="man_prepare_nodes_step12"></a> Confirm that node1 and node2 can access each other&#8217;s storage and verify that no disks are missing:</p>
 <div class="paragraph">
 <p><code>storage failover show -fields local-missing-disks,partner-missing-disks</code></p>
 </div>
@@ -3134,7 +3128,7 @@ node2    None                None</pre>
 </div>
 </li>
 <li>
-<p>Ensure that node1 and node2 are healthy and eligible to participate in the cluster:</p>
+<p>Confirm that node1 and node2 are healthy and eligible to participate in the cluster:</p>
 <div class="paragraph">
 <p><code>cluster show</code></p>
 </div>
@@ -3159,7 +3153,7 @@ node2                 true    true</pre>
 </div>
 </li>
 <li>
-<p><a id="man_prepare_nodes_step15"></a> Ensure that node1 and node2 are running the same ONTAP release:</p>
+<p><a id="man_prepare_nodes_step15"></a> Confirm that node1 and node2 are running the same ONTAP release:</p>
 <div class="paragraph">
 <p><code>system node image show -node &lt;node1,node2&gt; -iscurrent true</code></p>
 </div>
@@ -3234,17 +3228,12 @@ vs0
 </li>
 <li>
 <p>Collect information about node1 and node2 by completing the following substeps and recording the output of each command:</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="Note">
-</td>
-<td class="content">
-You will use this information later in the procedure.
-</td>
-</tr>
-</table>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>+<br>
+NOTE: You will use this information later in the procedure.</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -3319,10 +3308,8 @@ After the upgrade, you will run the command again and compare the output with th
 </tr>
 </table>
 </div>
-</li>
-</ol>
-</div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Enter the following commands to see if any interface groups or VLANs are configured on node1 or node2:</p>
 <div class="paragraph">
@@ -3336,9 +3323,11 @@ After the upgrade, you will run the command again and compare the output with th
 </div>
 </li>
 <li>
-<p>Complete the following substeps on both node1 and node2 to ensure that physical ports can be mapped correctly later in the procedure:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>Complete the following substeps on both node1 and node2 to confirm that physical ports can be mapped correctly later in the procedure:</p>
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>Enter the following command to see if there are failover groups on the node other than <code>clusterwide</code>:</p>
 <div class="paragraph">
@@ -3394,10 +3383,8 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69</pre>
 </li>
 <li>
 <p>If there are VLANs configured on the node, take note of each network port and VLAN ID pairing.</p>
-</li>
-</ol>
-</div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Take one of the following actions:</p>
 <table class="tableblock frame-all grid-all stretch">
@@ -3456,8 +3443,10 @@ vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true</pre>
 </li>
 <li>
 <p><a id="man_prepare_nodes_step24"></a>Verify that all the nodes in the cluster are in quorum by completing the following substeps:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>Enter the advanced privilege level:</p>
 <div class="paragraph">
@@ -3506,10 +3495,8 @@ node1         node1         in-quorum     true          operational
 <div class="paragraph">
 <p><code>set -privilege admin</code></p>
 </div>
-</li>
-</ol>
-</div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Take one of the following actions:</p>
 <table class="tableblock frame-all grid-all stretch">
@@ -3629,8 +3616,10 @@ node2 0   50  I_1818FAStT_1
 </li>
 <li>
 <p><a id="man_prepare_nodes_step29"></a>Complete the following substeps:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>Enter the following command on one of the original nodes and record the output:</p>
 <div class="paragraph">
@@ -3641,21 +3630,19 @@ node2 0   50  I_1818FAStT_1
 </div>
 </li>
 <li>
-<p>Ensure that the SP status is <code>online</code>.</p>
+<p>Confirm that the SP status is <code>online</code>.</p>
 </li>
 <li>
-<p>Ensure that the SP network is configured.</p>
+<p>Confirm that the SP network is configured.</p>
 </li>
 <li>
 <p>Record the IP address and other information about the SP.</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>You might want to reuse the network parameters of the remote management devices, in this case the SPs, from the original system for the SPs on the new nodes.<br>
 For detailed information about the SP, refer to <a href="other_references.html">References</a> to link to the <em>System Administration Reference</em> and the <em>ONTAP 9 Commands: Manual Page Reference</em>.</p>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><a id="man_prepare_nodes_step30"></a>If you want the new nodes to have the same licensed functionality as the original nodes, enter the following command to see the cluster licenses on the original system:</p>
 <div class="paragraph">
@@ -3793,30 +3780,14 @@ Do not send an AutoSupport message to NetApp for node2 at this point; you do so 
 </li>
 </ol>
 </div>
+</li>
+</ol>
+</div>
 
     </article>
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Prepare the nodes for upgrade](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/prepare_nodes_for_upgrade.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-manual/prepare_nodes_for_upgrade.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
