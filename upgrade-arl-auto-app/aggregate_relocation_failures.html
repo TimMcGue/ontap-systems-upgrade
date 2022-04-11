@@ -45,12 +45,52 @@
   <link rel="stylesheet" href='/us-en/ontap-systems-upgrade/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/us-en/ontap-systems-upgrade/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/us-en/ontap-systems-upgrade/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
@@ -60,15 +100,6 @@
 
   <script src='/us-en/ontap-systems-upgrade/js/na-utility.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/us-en/ontap-systems-upgrade/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/ontap-systems-upgrade/js/toc.js'></script>
@@ -121,16 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/us-en/ontap-systems-upgrade/js/version-dropdown.js'></script>
+  <script src='/us-en/ontap-systems-upgrade/js/custom-dropdown.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap-systems-upgrade/js/jszip.min.js'></script>
@@ -138,20 +161,15 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Aggregate relocation failures](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/aggregate_relocation_failures.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-app/aggregate_relocation_failures.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Aggregate relocation failures](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/aggregate_relocation_failures.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-app/aggregate_relocation_failures.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -161,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -244,7 +263,8 @@
           data-did-you-mean="Search for {suggestion}." 
           data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
           data-results-found="{hitCount} results found"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -333,6 +353,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/us-en/ontap-systems-upgrade/pdfs/fullsite-sidebar/AFF_and_FAS_System_Upgrade_Documentation.pdf" >
           <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
 
@@ -341,6 +364,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Upgrade_by_moving_volumes_or_storage.pdf" 
@@ -360,6 +386,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Upgrade_by_moving_storage.pdf" 
@@ -387,6 +416,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Optional___Move_internal_storage_or_convert_to_drive_shelf.pdf" 
@@ -419,6 +451,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Complete_upgrade.pdf" 
@@ -432,6 +467,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Overview.pdf" 
@@ -445,6 +483,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Complete_in_ONTAP_9_8.pdf" 
@@ -473,6 +514,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Complete_in_ONTAP_9_7_or_earlier.pdf" 
@@ -528,6 +572,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Upgrade_by_moving_volumes.pdf" 
@@ -551,6 +598,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Move__delete__or_create_SAN_LIFS.pdf" 
@@ -603,6 +653,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use_aggregate_relocation_to_upgrade_controller_hardware.pdf" 
@@ -618,6 +671,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_running_ONTAP_9_10_1_or_later.pdf" 
@@ -643,6 +699,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_1__Prepare_for_upgrade.pdf" 
@@ -671,6 +730,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_resources_and_retire_AFF_A700_node1.pdf" 
@@ -701,6 +763,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
@@ -731,6 +796,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_4__Relocate_resources_from_node2_and_retire_node2.pdf" 
@@ -757,6 +825,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_NVRAM_module_and_controller_module_on_node2.pdf" 
@@ -783,6 +854,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
@@ -813,6 +887,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_7__Complete_the_upgrade.pdf" 
@@ -845,6 +922,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Troubleshoot.pdf" 
@@ -888,6 +968,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_controller_hardware_running_ONTAP_9_8_or_later.pdf" 
@@ -919,6 +1002,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_1__Prepare_for_upgrade.pdf" 
@@ -947,6 +1033,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_and_retire_node1.pdf" 
@@ -979,6 +1068,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Install_and_boot_node3.pdf" 
@@ -1013,6 +1105,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_4__Relocate_and_retire_node2.pdf" 
@@ -1041,6 +1136,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_and_boot_node4.pdf" 
@@ -1075,6 +1173,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Complete_the_upgrade.pdf" 
@@ -1109,6 +1210,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Troubleshoot.pdf" 
@@ -1161,6 +1265,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Manually_upgrade_controller_hardware_running_ONTAP_9_8_or_later.pdf" 
@@ -1186,6 +1293,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_1__Prepare_for_upgrade.pdf" 
@@ -1224,6 +1334,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_and_retire_node1.pdf" 
@@ -1256,6 +1369,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Install_and_boot_node3.pdf" 
@@ -1265,6 +1381,8 @@
             Stage 3. Install and boot node3
           </a>
           
+
+
 
 
 
@@ -1292,6 +1410,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_4__Record_information_and_retire_node2.pdf" 
@@ -1320,6 +1441,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_and_boot_node4.pdf" 
@@ -1329,6 +1453,8 @@
             Stage 5. Install and boot node4
           </a>
           
+
+
 
 
 
@@ -1354,6 +1480,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Complete_the_upgrade.pdf" 
@@ -1388,6 +1517,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Troubleshoot.pdf" 
@@ -1433,6 +1565,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_controller_hardware_running_ONTAP_9_5_to_9_7.pdf" 
@@ -1464,6 +1599,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_1__Prepare_for_upgrade.pdf" 
@@ -1492,6 +1630,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_and_retire_node1.pdf" 
@@ -1524,6 +1665,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Install_and_boot_node3.pdf" 
@@ -1560,6 +1704,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_4__Relocate_and_retire_node.pdf" 
@@ -1588,6 +1735,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_and_boot_node4.pdf" 
@@ -1624,6 +1774,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Complete_the_upgrade.pdf" 
@@ -1658,6 +1811,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Troubleshoot.pdf" 
@@ -1701,6 +1857,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Manually_upgrade_controller_hardware_running_ONTAP_9_7_or_earlier.pdf" 
@@ -1726,6 +1885,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Reconfigure_the_FC_switch_layout_for_ONTAP_9_1_or_later.pdf" 
@@ -1766,6 +1928,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_1__Prepare_for_upgrade.pdf" 
@@ -1804,6 +1969,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_and_retire_node1.pdf" 
@@ -1836,6 +2004,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Install_and_boot_node3.pdf" 
@@ -1845,6 +2016,8 @@
             Stage 3. Install and boot node3
           </a>
           
+
+
 
 
 
@@ -1874,6 +2047,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_4__Record_information_and_retire_node2.pdf" 
@@ -1902,6 +2078,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_and_boot_node4.pdf" 
@@ -1911,6 +2090,8 @@
             Stage 5. Install and boot node4
           </a>
           
+
+
 
 
 
@@ -1938,6 +2119,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Complete_the_upgrade.pdf" 
@@ -1972,6 +2156,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Troubleshoot.pdf" 
@@ -2382,7 +2569,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/required_tools_documentation.html">
         Required tools and documentation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
-         Worksheet:  Information to collect before and during the controller upgrade
+        Worksheet: Information to collect before and during the controller upgrade
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Stage 1. Prepare for upgrade</div>
       </a>
@@ -2428,6 +2615,8 @@
         Map ports from node1 to node3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html">
         Move NAS data LIFs owned by node1 from node2 to node3 and verify SAN LIFs on node3
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_moving_san_lifs_node3.html">
+        Worksheet: Information to record before moving NAS data LIFs to node3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/relocate_non_root_aggr_node2_node3.html">
         Relocate non-root aggregates from node2 to node3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node2_node3.html">
@@ -2454,6 +2643,8 @@
         Map ports from node2 to node4
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html">
         Move NAS data LIFs owned by node2 from node3 to node4 and verify SAN LIFs on node4
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_moving_san_lifs_node4.html">
+        Worksheet: Information to record before moving NAS data LIFs to node4
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/relocate_node2_non_root_aggr_node3_node4.html">
         Relocate node2's non-root aggregates from node3 to node4
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2618,7 +2809,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/required_tools_documentation.html">
         Required tools and documentation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/worksheet_information_before_during_upgrade.html">
-         Worksheet:  Information to collect before and during the controller upgrade
+        Worksheet: Information to collect before and during the controller upgrade
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reconfigure the FC switch layout for ONTAP 9.1 or later</div>
       </a>
@@ -2687,6 +2878,8 @@
         Verify the node3 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html">
         Move NAS data LIFs owned by node1 from node2 to node3 and verify SAN LIFs on node3
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/worksheet_information_before_moving_san_lifs_node3.html">
+        Worksheet: Information to record before moving NAS data LIFs to node3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html">
         Relocate non-root aggregates from node2 to node3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node2_node3.html">
@@ -2715,6 +2908,8 @@
         Verify the node4 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html">
         Move NAS data LIFs owned by node2 from node3 to node4 and verify SAN LIFs on node4
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/worksheet_information_before_moving_san_lifs_node4.html">
+        Worksheet: Information to record before moving NAS data LIFs to node4
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-manual/relocate_node2_non_root_aggr_node3_node4.html">
         Relocate node2's non-root aggregates from node3 to node4
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2761,6 +2956,7 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
@@ -2800,7 +2996,7 @@
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-aoife">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aoife">
     <img  class="avatar avatar-small"
           alt="netapp-aoife"
           width="20" height="20"
@@ -2808,7 +3004,7 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-pcarriga">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-pcarriga">
     <img  class="avatar avatar-small"
           alt="netapp-pcarriga"
           width="20" height="20"
@@ -2947,98 +3143,122 @@ When node2 is replaced, aggr_node_1 will come online with node4 as its home node
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
-  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Have feedback for our website?</span>
+              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
       </div><!-- Elasticsearch JS -->
