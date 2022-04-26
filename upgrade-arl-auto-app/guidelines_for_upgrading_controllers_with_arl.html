@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -2991,7 +2991,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-16 18:20:17 +0000">03/16/2022</time>
+    <time datetime="2022-04-05 14:34:04 +0000">04/05/2022</time>
     
   
 
@@ -3049,7 +3049,7 @@ If you are upgrading a system that supports internal drives (for example, an FAS
 </table>
 </div>
 <div class="paragraph">
-<p>If you have a system with more than two cluster ports per node, such as an FAS8080 or an AFF8080, you must consolidate the cluster LIFs to two cluster ports per node before you start the controller upgrade. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.</p>
+<p>If you have a system with more than two cluster ports per node, such as an FAS8080 or an AFF8080 system, before you start the upgrade, you must migrate and re-home the cluster LIFs to two cluster ports per node. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.</p>
 </div>
 <div class="paragraph">
 <p>Controller upgrade using ARL is supported on systems configured with SnapLock Enterprise and SnapLock Compliance volumes.</p>

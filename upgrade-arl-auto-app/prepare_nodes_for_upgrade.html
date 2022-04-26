@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-auto-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-auto-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -2991,7 +2991,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-22 12:54:22 +0000">03/22/2022</time>
+    <time datetime="2022-03-28 12:22:28 +0000">03/28/2022</time>
     
   
 
@@ -3186,7 +3186,7 @@ If node affinity jobs are running, the check fails.</p></td>
 <img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="Note">
 </td>
 <td class="content">
-If you have a system with more than two cluster ports per node, such as an FAS8080 or an AFF8080, you must consolidate the cluster LIFs to two cluster ports per node before you start the controller upgrade. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.
+If you have a system with more than two cluster ports per node, such as an FAS8080 or an AFF8080 system, before you start the upgrade, you must migrate and re-home the cluster LIFs to two cluster ports per node. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.
 </td>
 </tr>
 </table>
