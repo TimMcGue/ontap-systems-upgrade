@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap-systems-upgrade/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -678,11 +670,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_running_ONTAP_9_10_1_or_later.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Use__system_controller_replace__commands_to_upgrade_AFF_A700_to_AFF_A900_or_FAS9000_to_FAS9500.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 or later
+            Use "system controller replace" commands to upgrade AFF A700 to AFF A900 or FAS9000 to FAS9500
           </a>
           
 
@@ -737,11 +729,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_resources_and_retire_AFF_A700_node1.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_2__Relocate_resources_and_retire_the_AFF_A700_or_FAS9000_node1.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 2. Relocate resources and retire AFF A700 node1
+            Stage 2. Relocate resources and retire the AFF A700 or FAS9000 node1
           </a>
           
 
@@ -770,11 +762,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_3__Boot_node1_with_the_AFF_A900_or_FAS9500_controller_and_NVRAM_modules.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 3. Boot node1 with the AFF A900 controller module and NVRAM module
+            Stage 3. Boot node1 with the AFF A900 or FAS9500 controller and NVRAM modules
           </a>
           
 
@@ -832,11 +824,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_NVRAM_module_and_controller_module_on_node2.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_5__Install_the_AFF_A900_or_FAS9500_NVRAM_and_controller_modules_on_node2.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 5. Install the AFF A900 NVRAM module and controller module on node2
+            Stage 5. Install the AFF A900 or FAS9500 NVRAM and controller modules on node2
           </a>
           
 
@@ -861,11 +853,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_controller_module_and_NVRAM_module.pdf" 
+              href="/us-en/ontap-systems-upgrade/pdfs/sidebar/Stage_6__Boot_node2_with_the_AFF_A900_or_FAS9500_controller_and_NVRAM_modules.pdf" 
             
           >
             <img src="/us-en/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            Stage 6. Boot node2 with the AFF A900 controller module and NVRAM module
+            Stage 6. Boot node2 with the AFF A900 or FAS9500 controller and NVRAM modules
           </a>
           
 
@@ -2247,7 +2239,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/index.html">
         AFF and FAS System Upgrade Documentation
       </a></li><li class="subfolders "><a href="#">
@@ -2347,7 +2339,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl/index.html">
         Overview
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Use "system controller replace" commands to upgrade AFF A700 to AFF A900 running ONTAP 9.10.1 or later</div>
+        <div class="na-navbar-padding"> Use "system controller replace" commands to upgrade AFF A700 to AFF A900 or FAS9000 to FAS9500</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         Overview
@@ -2358,7 +2350,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/required_tools_and_documentation.html">
         Required tools and documentation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html">
-        Guidelines for upgrading from an AFF A700 to an AFF A900 with ARL
+        Guidelines for upgrading controllers
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         Overview of the ARL upgrade
       </a></li><li class="subfolders "><a href="#">
@@ -2371,7 +2363,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html">
         Get an IP address of an external key management server for storage encryption
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 2. Relocate resources and retire AFF A700 node1</div>
+        <div class="na-navbar-padding"> Stage 2. Relocate resources and retire the AFF A700 or FAS9000 node1</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html">
         Relocate non-root aggregates and NAS data LIFs owned by node1 to node2
@@ -2382,10 +2374,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         Netboot node1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 3. Boot node1 with the AFF A900 controller module and NVRAM module</div>
+        <div class="na-navbar-padding"> Stage 3. Boot node1 with the AFF A900 or FAS9500 controller and NVRAM modules</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        Boot node1 with the AFF A900 controller module and NVRAM module
+        Boot node1 with the AFF A900 controller and NVRAM modules
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         Verify the node1 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2400,17 +2392,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         Retire node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 5. Install the AFF A900 NVRAM module and controller module on node2</div>
+        <div class="na-navbar-padding"> Stage 5. Install the AFF A900 or FAS9500 NVRAM and controller modules on node2</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        Install AFF A900 NVRAM module and controller module on node2
+        Install AFF A900 or FAS9500 NVRAM and controller modules on node2
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         Netboot node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Stage 6. Boot node2 with the AFF A900 controller module and NVRAM module</div>
+        <div class="na-navbar-padding"> Stage 6. Boot node2 with the AFF A900 or FAS9500 controller and NVRAM modules</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        Boot node2 with the AFF A900 controller module and NVRAM module
+        Boot node2 with the AFF A900 or FAS9500 controller and NVRAM modules
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         Verify the node2 installation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -3369,4 +3361,5 @@ You must wait until all of the aggregates that are owned by node2 have been relo
     </script>
     <script src='/us-en/ontap-systems-upgrade/js/www-ntap.js'></script>
     <script src='/us-en/ontap-systems-upgrade/js/tabbed-blocks.js'></script>
+    <script src='/us-en/ontap-systems-upgrade/js/sidebar.js'></script>
   </body></html>
